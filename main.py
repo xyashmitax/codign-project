@@ -212,19 +212,18 @@ drawBackground()
 # game Loop
 running = True
 while running:
-  button = 0
+    button = 0
 
-  for e in pygame.event.get():
+    for e in pygame.event.get():
+        if e.type == pygame.QUIT:
+            running = False
 
-    if e.type == pygame.QUIT:
-      running = False
+        if e.type == pygame.MOUSEBUTTONDOWN:
+            mx, my = e.pos
+            button = e.button
 
-    if e.type == pygame.MOUSEBUTTONDOWN:
-      mx, my = e.pos          
-      button = e.button
+        elif e.type == pygame.MOUSEMOTION:
+            mx, my = e.pos
 
-    elif e.type == pygame.MOUSEMOTION:
-      mx, my = e.pos 
-  
-  drawScene(screen, button, mx, my)
-  pygame.display.flip()
+    drawScene(screen, button, mx, my)
+    pygame.display.flip()
