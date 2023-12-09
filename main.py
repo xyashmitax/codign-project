@@ -118,15 +118,15 @@ def drawBackground():
   pygame.draw.ellipse(screen, BLACK, (131, 396, 23, 23), 1)
 
 # draws guess balls if colours are selected
-def ifMouseClicked():
-  global colours_area1, colours_area2, colours_area3, colours_area4, colours_area5, colours_area6, guess_area1_colour, guess_area2_colour, guess_area3_colour, guess_area4_colour, guess_counter
+def ifMouseClicked(button=0):
+    global colours_area1, colours_area2, colours_area3, colours_area4, colours_area5, colours_area6, guess_area1_colour, guess_area2_colour, guess_area3_colour, guess_area4_colour, guess_counter
 
-  if button == 1:
-    if colours_area1.collidepoint(mx, my) or colours_area2.collidepoint(mx, my) or colours_area3.collidepoint(mx, my) or colours_area4.collidepoint(mx, my) or colours_area5.collidepoint(mx, my) or colours_area6.collidepoint(mx, my):
-      pygame.draw.ellipse(screen, guess_area1_colour, (422, 114, 32, 32))
-      pygame.draw.ellipse(screen, guess_area2_colour, (474, 114, 32, 32))
-      pygame.draw.ellipse(screen, guess_area3_colour, (526, 114, 32, 32))
-      pygame.draw.ellipse(screen, guess_area4_colour, (578, 114, 32, 32))
+    if button == 1:
+        if colours_area1.collidepoint(mx, my) or colours_area2.collidepoint(mx, my) or colours_area3.collidepoint(mx, my) or colours_area4.collidepoint(mx, my) or colours_area5.collidepoint(mx, my) or colours_area6.collidepoint(mx, my):
+            pygame.draw.ellipse(screen, guess_area1_colour, (422, 114, 32, 32))
+            pygame.draw.ellipse(screen, guess_area2_colour, (474, 114, 32, 32))
+            pygame.draw.ellipse(screen, guess_area3_colour, (526, 114, 32, 32))
+            pygame.draw.ellipse(screen, guess_area4_colour, (578, 114, 32, 32))
 
 def drawScene(screen, button, mx, my):
   global colours_area1, colours_area2, colours_area3, colours_area4, colours_area5, colours_area6, guess_counter, guess_colour_change, guess_area1_colour, guess_area2_colour, guess_area3_colour, guess_area4_colour, guess_area1, guess_area2, guess_area3, guess_area4, indicator_x, OFF_WHITE
